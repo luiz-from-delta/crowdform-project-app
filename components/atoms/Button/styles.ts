@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'center',
-    rowGap: 10,
+    rowGap: 14,
     width: '100%',
   },
 

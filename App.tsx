@@ -9,6 +9,7 @@ import {
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import LoginPage from './components/pages/LoginPage';
+import SignUpPage from './components/pages/SignUpPage';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,7 +27,7 @@ const App = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <LoginPage />
+        <SignUpPage />
       </ScrollView>
     </SafeAreaView>
   );
