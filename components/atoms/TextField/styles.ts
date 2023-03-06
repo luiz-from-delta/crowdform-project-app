@@ -7,7 +7,13 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
 
-  input: {
+  inputContainer: {
+    height: 58,
+    position: 'relative',
+    width: '100%',
+  },
+
+  inputElement: {
     backgroundColor: '#F4F4F4',
     borderRadius: 4,
     color: '#000000',
@@ -15,7 +21,18 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     height: 58,
     paddingHorizontal: 10,
+    position: 'absolute',
+    top: 0,
+    left: 0,
     width: '100%',
+  },
+
+  inputIconContainer: {
+    height: 20,
+    position: 'absolute',
+    right: 10,
+    top: 19,
+    width: 20,
   },
 
   label: {
