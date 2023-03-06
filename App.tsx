@@ -8,6 +8,7 @@ import {
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
+import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import SignUpPage from './components/pages/SignUpPage';
 
@@ -24,11 +25,7 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <SignUpPage />
-      </ScrollView>
+      <HomePage />
     </SafeAreaView>
   );
 };
