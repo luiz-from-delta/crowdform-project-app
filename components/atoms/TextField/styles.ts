@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     display: 'flex',
     rowGap: 5,
+    width: '100%',
   },
 
   input: {
