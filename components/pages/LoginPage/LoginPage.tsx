@@ -22,7 +22,7 @@ const LoginPage = () => {
         <TextField
           label="Password"
           placeholder="Minimum 8 characters"
-          secureTextEntry
+          type="password"
         />
         <Button
           extra={

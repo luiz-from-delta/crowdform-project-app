@@ -16,7 +16,7 @@ type Props = {
   label: string;
   placeholder?: string;
   type?: 'default' | 'password';
-} & Omit<Partial<TextInputProps>, 'placeholder'>;
+} & Omit<Partial<TextInputProps>, 'placeholder' | 'secureTextEntry'>;
 
 const TextField = ({label, placeholder, type = 'default', ...props}: Props) => {
   const [hasSecureEntryProp, toggleHasSecureEntryProp] = useToggle(
