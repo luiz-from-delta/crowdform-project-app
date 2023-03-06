@@ -3,10 +3,12 @@ import {View} from 'react-native';
 
 import Button from '../../atoms/Button';
 import TextField from '../../atoms/TextField';
+import Title from '../../atoms/Title';
 
 const LoginPage = () => {
   return (
     <View>
+      <Title>Login</Title>
       <TextField
         keyboardType="email-address"
         label="Email"
