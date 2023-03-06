@@ -53,8 +53,8 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Sitara-Bold.ttf</string>
-		<string>Sitara-Regular.ttf</string>
+		<string>Sitara.ttf</string>
+		<string>Sora.ttf</string>
 	</array>
 </dict>
 </plist>

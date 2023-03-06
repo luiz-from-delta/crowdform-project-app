@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
 
   label: {
     color: '#FFFFFF',
-    fontFamily: 'Sitara-Regular',
+    fontFamily: 'Sora',
     fontSize: 16,
+    fontWeight: '500',
   },
 });
