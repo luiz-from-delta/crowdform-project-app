@@ -9,4 +9,10 @@ export const styles = StyleSheet.create({
     rowGap: 20,
     width: '100%',
   },
+
+  extra: {
+    color: '#A0A0A0',
+    fontFamily: 'Sora',
+    fontSize: 12,
+  },
 });

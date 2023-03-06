@@ -1,16 +1,20 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
 
 type Props = {
   children: string;
+  extra?: React.ReactNode;
 };
 
-const Button = ({children}: Props) => {
+const Button = ({children, extra}: Props) => {
   return (
-    <TouchableOpacity style={styles.container}>
-      <Text style={styles.label}>{children}</Text>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.label}>{children}</Text>
+      </TouchableOpacity>
+      {extra}
+    </View>
   );
 };
 

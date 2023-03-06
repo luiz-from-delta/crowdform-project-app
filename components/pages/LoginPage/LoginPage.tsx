@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Text, View} from 'react-native';
 
 import Button from '../../atoms/Button';
 import TextField from '../../atoms/TextField';
@@ -24,7 +24,14 @@ const LoginPage = () => {
           placeholder="Minimum 8 characters"
           secureTextEntry
         />
-        <Button>Login</Button>
+        <Button
+          extra={
+            <Text style={styles.extra}>
+              Don't have an account yet? Sign up here.
+            </Text>
+          }>
+          Login
+        </Button>
       </View>
     </>
   );
