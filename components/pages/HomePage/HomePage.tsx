@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, ScrollView, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 
 import Menu from '../../molecules/Menu';
 import TopBar from '../../atoms/TopBar';
@@ -12,6 +12,7 @@ import NatureIcon from '../../../assets/images/nature.svg';
 import FundCard from '../../molecules/FundCard';
 import ComponentHeader from '../../atoms/ComponentHeader';
 import LearnMoreCard from '../../molecules/LearnMoreCard';
+import InfoCard from '../../molecules/InfoCard';
 
 export type Fund = {
   icon: React.ReactNode;
@@ -47,6 +48,35 @@ const funds: Funds = [
   },
 ];
 
+export type Info = {
+  description: string;
+  id: string;
+  title: string;
+};
+
+type InfoList = Info[];
+
+const info: InfoList = [
+  {
+    description:
+      'Eu occaecat sint dolor officia. Culpa sunt aute culpa laborum aliqua pariatur est nisi ut officia. Ex qui reprehenderit culpa aute adipisicing esse eu.',
+    id: '1',
+    title: 'Why should you invest here?',
+  },
+  {
+    description:
+      'Ex qui reprehenderit culpa aute adipisicing esse eu. Eiusmod duis adipisicing esse quis cillum do non.',
+    id: '2',
+    title: 'Why should you invest here?',
+  },
+  {
+    description:
+      'Eiusmod duis adipisicing esse quis cillum do non. Ex qui reprehenderit culpa aute adipisicing esse eu. Eiusmod duis adipisicing esse quis cillum do non.',
+    id: '3',
+    title: 'Why should you invest here?',
+  },
+];
+
 const HomePage = () => {
   return (
     <View style={{width: '100%', height: '100%'}}>
@@ -75,6 +105,19 @@ const HomePage = () => {
         <View style={{paddingHorizontal: 20}}>
           <LearnMoreCard />
         </View>
+
+        <FlatList
+          data={info}
+          horizontal
+          keyExtractor={info => info.id}
+          renderItem={info => <InfoCard key={info.item.id} {...info.item} />}
+          style={styles.horizontalList}
+          contentContainerStyle={{
+            paddingHorizontal: 20,
+            columnGap: 20,
+          }}
+          showsHorizontalScrollIndicator={false}
+        />
       </View>
       <Menu />
     </View>
