@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, ScrollView, Text, View} from 'react-native';
 
 import Menu from '../../molecules/Menu';
 import TopBar from '../../atoms/TopBar';
@@ -98,12 +98,14 @@ const HomePage = () => {
           Account: {toCurrency(1457.23)}
         </Text>
       </TopBar>
-      <View
-        style={{
-          flex: 1,
+      <ScrollView
+        contentContainerStyle={{
           alignItems: 'flex-start',
+          flexGrow: 1,
+          paddingBottom: 24,
           rowGap: 20,
-        }}>
+        }}
+        showsVerticalScrollIndicator={false}>
         <ComponentHeader>Funds</ComponentHeader>
 
         <FlatList
@@ -135,7 +137,7 @@ const HomePage = () => {
           }}
           showsHorizontalScrollIndicator={false}
         />
-      </View>
+      </ScrollView>
       <Menu />
     </View>
   );

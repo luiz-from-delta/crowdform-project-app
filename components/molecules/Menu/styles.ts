@@ -3,14 +3,12 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   menuContainer: {
     alignItems: 'center',
+    backgroundColor: '#FFFFFF',
     borderTopColor: '#F4F4F4',
     borderTopWidth: 1,
-    bottom: 0,
     display: 'flex',
     flexDirection: 'row',
     height: 80,
-    left: 0,
-    position: 'absolute',
     width: '100%',
   },
 

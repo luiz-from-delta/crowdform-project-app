@@ -21,7 +21,7 @@ const LineChart = ({data, percentRange}: Props) => {
       bezier
       transparent
       width={150}
-      height={40}
+      height={55}
       withDots={false}
       withHorizontalLabels={false}
       withHorizontalLines={false}
