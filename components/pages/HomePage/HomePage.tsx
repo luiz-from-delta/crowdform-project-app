@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 
 import Menu from '../../molecules/Menu';
 import TopBar from '../../atoms/TopBar';
@@ -10,11 +10,15 @@ import WindIcon from '../../../assets/images/wind.svg';
 import SunIcon from '../../../assets/images/sun.svg';
 import NatureIcon from '../../../assets/images/nature.svg';
 
+import BellIcon from '../../../assets/images/bell.svg';
+import UserIcon from '../../../assets/images/user.svg';
+
 import FundCard from '../../molecules/FundCard';
 import ComponentHeader from '../../atoms/ComponentHeader';
 import LearnMoreCard from '../../molecules/LearnMoreCard';
 import InfoCard from '../../molecules/InfoCard';
 import PortfolioInfo from '../../molecules/PortfolioInfo';
+import {toCurrency} from '../../../utils/number';
 
 export type Fund = {
   data: number[];
@@ -86,7 +90,14 @@ const info: InfoList = [
 const HomePage = () => {
   return (
     <View style={{width: '100%', height: '100%'}}>
-      <TopBar extra={<PortfolioInfo />} />
+      <TopBar
+        extra={<PortfolioInfo />}
+        left={<UserIcon />}
+        right={<BellIcon />}>
+        <Text style={{fontSize: 14, fontWeight: '600'}}>
+          Account: {toCurrency(1457.23)}
+        </Text>
+      </TopBar>
       <View
         style={{
           flex: 1,

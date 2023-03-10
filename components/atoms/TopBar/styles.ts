@@ -12,7 +12,11 @@ export const styles = StyleSheet.create({
   },
 
   header: {
+    alignItems: 'center',
     height: 50,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
     width: '100%',
   },
 });

@@ -5,12 +5,18 @@ import {styles} from './styles';
 type Props = {
   children?: React.ReactNode;
   extra?: React.ReactNode;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
 };
 
-const TopBar = ({children, extra}: Props) => {
+const TopBar = ({children, extra, left, right}: Props) => {
   return (
     <View style={styles.container}>
-      {children && <View style={styles.header}>{children}</View>}
+      <View style={styles.header}>
+        {left || <View />}
+        {children}
+        {right || <View />}
+      </View>
       {extra}
     </View>
   );

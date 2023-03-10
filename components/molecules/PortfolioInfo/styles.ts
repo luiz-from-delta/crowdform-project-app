@@ -5,15 +5,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    height: 100,
+    height: 75,
     justifyContent: 'space-between',
-    padding: 20,
+    paddingBottom: 15,
+    paddingHorizontal: 20,
+    paddingTop: 5,
     rowGap: 10,
     width: '100%',
   },
 
   infoContainer: {
-    rowGap: 4,
+    rowGap: 2,
   },
 
   infoData: {
