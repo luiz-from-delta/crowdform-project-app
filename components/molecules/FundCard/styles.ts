@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
     rowGap: 14,
-    width: 140,
+    width: 150,
   },
 
   footer: {
@@ -19,6 +19,19 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
+  },
+
+  footerText: {
+    fontFamily: 'Sora',
+    fontSize: 14,
+  },
+
+  negative: {
+    color: '#EE8688',
+  },
+
+  positive: {
+    color: '#0FDF8F',
   },
 
   title: {
