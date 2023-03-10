@@ -8,9 +8,11 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     display: 'flex',
     justifyContent: 'center',
-    height: 50,
     width: '100%',
   },
 
-  header: {},
+  header: {
+    height: 50,
+    width: '100%',
+  },
 });

@@ -14,6 +14,7 @@ import FundCard from '../../molecules/FundCard';
 import ComponentHeader from '../../atoms/ComponentHeader';
 import LearnMoreCard from '../../molecules/LearnMoreCard';
 import InfoCard from '../../molecules/InfoCard';
+import PortfolioInfo from '../../molecules/PortfolioInfo';
 
 export type Fund = {
   data: number[];
@@ -85,7 +86,7 @@ const info: InfoList = [
 const HomePage = () => {
   return (
     <View style={{width: '100%', height: '100%'}}>
-      <TopBar />
+      <TopBar extra={<PortfolioInfo />} />
       <View
         style={{
           flex: 1,
