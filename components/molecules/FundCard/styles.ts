@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     height: 145,
     justifyContent: 'center',
     padding: 10,
-    rowGap: 14,
+    rowGap: 10,
     width: 150,
   },
 

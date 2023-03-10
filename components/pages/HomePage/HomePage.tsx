@@ -9,12 +9,14 @@ import {styles} from './styles';
 import WindIcon from '../../../assets/images/wind.svg';
 import SunIcon from '../../../assets/images/sun.svg';
 import NatureIcon from '../../../assets/images/nature.svg';
+
 import FundCard from '../../molecules/FundCard';
 import ComponentHeader from '../../atoms/ComponentHeader';
 import LearnMoreCard from '../../molecules/LearnMoreCard';
 import InfoCard from '../../molecules/InfoCard';
 
 export type Fund = {
+  data: number[];
   icon: React.ReactNode;
   id: string;
   percent: number;
@@ -26,6 +28,7 @@ type Funds = Fund[];
 
 const funds: Funds = [
   {
+    data: [5, 72, 34, 50, 19, 76, 72, 30],
     icon: <WindIcon />,
     id: '1',
     percent: 0.0351,
@@ -33,6 +36,7 @@ const funds: Funds = [
     value: 1032.23,
   },
   {
+    data: [97, 34, 60, 24, 45, 60, 8, 23],
     icon: <SunIcon />,
     id: '2',
     percent: -0.0013,
@@ -40,6 +44,7 @@ const funds: Funds = [
     value: 986.61,
   },
   {
+    data: [67, 23, 32, 57, 80, 32, 12, 45],
     icon: <NatureIcon />,
     id: '3',
     percent: 0.0351,
