@@ -101,8 +101,8 @@ const HomePage = () => {
           renderItem={fund => <FundCard key={fund.item.id} {...fund.item} />}
           style={styles.horizontalList}
           contentContainerStyle={{
-            paddingHorizontal: 20,
-            columnGap: 20,
+            paddingHorizontal: 18,
+            columnGap: 18,
           }}
           showsHorizontalScrollIndicator={false}
         />
@@ -118,8 +118,8 @@ const HomePage = () => {
           renderItem={info => <InfoCard key={info.item.id} {...info.item} />}
           style={styles.horizontalList}
           contentContainerStyle={{
-            paddingHorizontal: 20,
-            columnGap: 20,
+            paddingHorizontal: 18,
+            columnGap: 18,
           }}
           showsHorizontalScrollIndicator={false}
         />

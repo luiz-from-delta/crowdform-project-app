@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 14,
     rowGap: 14,
-    width: 150,
+    width: 152,
   },
 
   description: {

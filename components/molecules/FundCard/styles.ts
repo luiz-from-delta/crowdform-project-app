@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
     rowGap: 10,
-    width: 150,
+    width: 152,
   },
 
   footer: {
@@ -28,6 +28,12 @@ export const styles = StyleSheet.create({
 
   negative: {
     color: '#EE8688',
+  },
+
+  percentContainer: {
+    alignItems: 'center',
+    columnGap: 1,
+    flexDirection: 'row',
   },
 
   positive: {
