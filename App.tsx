@@ -11,6 +11,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import HomePage from './components/pages/HomePage';
 import LoginPage from './components/pages/LoginPage';
 import SignUpPage from './components/pages/SignUpPage';
+import TradePage from './components/pages/TradePage';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,7 +26,7 @@ const App = () => {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <HomePage />
+      <TradePage />
     </SafeAreaView>
   );
 };
