@@ -1,23 +1,21 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StyleProp, Text, View, ViewStyle} from 'react-native';
 import {toCurrency, toPercent} from '../../../utils/number';
 import {styles} from './styles';
 
 import ArrowDownIcon from '../../../assets/images/arrow-down.svg';
 import ArrowUpIcon from '../../../assets/images/arrow-up.svg';
-import CoinIcon from '../../../assets/images/coin.svg';
-
-import Button from '../../atoms/Button';
 
 import {Fund} from '../../pages/TradePage/TradePage';
 
 type Props = {
   data: Fund;
+  style?: StyleProp<ViewStyle>;
 };
 
-const FundInfo = ({data}: Props) => {
+const FundInfo = ({data, style}: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <View style={styles.infoData}>
         <Text style={styles.infoEquityValue}>{toCurrency(data.value)}</Text>
         <View style={styles.infoValues}>

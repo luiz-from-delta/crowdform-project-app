@@ -21,11 +21,15 @@ import logo1 from '../../../assets/images/logo-1.png';
 import logo2 from '../../../assets/images/logo-2.png';
 import logo3 from '../../../assets/images/logo-3.png';
 
+import PortfolioIcon from '../../../assets/images/portfolio.svg';
+
 import ComponentHeader from '../../atoms/ComponentHeader';
 import FundInfo from '../../molecules/FundInfo';
 import TabSelector from '../../molecules/TabSelector';
 import InfoStatsList from '../../molecules/InfoStatsList';
 import BreakdownCard from '../../molecules/BreakdownCard';
+import Button from '../../atoms/Button';
+import Paragraph from '../../atoms/Paragraph';
 
 export type Fund = {
   data: number[];
@@ -157,6 +161,7 @@ const TradePage = () => {
         contentContainerStyle={{
           alignItems: 'flex-start',
           flexGrow: 1,
+          paddingTop: 10,
           paddingBottom: 24,
           rowGap: 20,
         }}
@@ -215,6 +220,57 @@ const TradePage = () => {
           }}
           showsHorizontalScrollIndicator={false}
         />
+
+        <View style={styles.portfolioContainer}>
+          <ComponentHeader
+            icon={<PortfolioIcon />}
+            style={{marginHorizontal: 0, marginBottom: 15}}>
+            Your Portfolio
+          </ComponentHeader>
+
+          <FundInfo
+            data={fund}
+            style={{
+              marginBottom: 12,
+              paddingHorizontal: 2,
+            }}
+          />
+
+          <View style={styles.portfolioButtons}>
+            <Button
+              buttonStyle={{
+                backgroundColor: '#FFFFFF',
+                borderColor: '#CFCFCF',
+                borderWidth: 1,
+              }}
+              labelStyle={{
+                color: '#770FDF',
+              }}
+              style={{
+                flex: 1,
+              }}>
+              Sell
+            </Button>
+            <Button
+              buttonStyle={{backgroundColor: '#0FDF8F'}}
+              style={{flex: 1}}>
+              Retire credits
+            </Button>
+          </View>
+
+          <Text style={styles.text}>
+            You've previously retired 28 credits of this asset
+          </Text>
+
+          <Paragraph>
+            Please note that prices are for reference only and may vary at the
+            time of excecuting a buy or sell order. The information provided is
+            not investment advice, and should not be used as a recommendation to
+            buy or sell assets.
+          </Paragraph>
+
+          <Button style={{width: '100%'}}>Buy</Button>
+        </View>
       </ScrollView>
       <Menu />
     </View>
