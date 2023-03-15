@@ -1,10 +1,8 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
@@ -13,21 +11,36 @@ import LoginPage from './components/pages/LoginPage';
 import SignUpPage from './components/pages/SignUpPage';
 import TradePage from './components/pages/TradePage';
 
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : '#FFFFFF',
+    backgroundColor: '#FFFFFF',
+    flex: 1,
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <TradePage />
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <Stack.Navigator
+          initialRouteName="Login"
+          screenOptions={{
+            headerShown: false,
+            contentStyle: {backgroundColor: '#FFFFFF'},
+          }}>
+          <Stack.Screen name="Login" component={LoginPage} />
+          <Stack.Screen name="SignUp" component={SignUpPage} />
+          <Stack.Screen name="Home" component={HomePage} />
+          <Stack.Screen name="Trade" component={TradePage} />
+        </Stack.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 
