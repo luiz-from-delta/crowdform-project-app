@@ -85,11 +85,15 @@ const info: InfoList = [
   },
 ];
 
+const breakdowns = ['Highlighted', 'Value', 'Vintage', 'Registry'] as const;
 const periods = ['1h', '1d', '1w', '1m', '1y', 'All'] as const;
 
+type Breakdown = (typeof breakdowns)[number];
 type Period = (typeof periods)[number];
 
 const TradePage = () => {
+  const [currentBreakdown, setCurrentBreakdown] =
+    useState<Breakdown>('Highlighted');
   const [currentPeriod, setCurrentPeriod] = useState<Period>('1d');
 
   return (
@@ -137,6 +141,18 @@ const TradePage = () => {
         /> */}
 
         <InfoStatsList data={info} />
+
+        <ComponentHeader>Fund Breakdown</ComponentHeader>
+
+        <TabSelector
+          current={currentBreakdown}
+          setCurrent={setCurrentBreakdown}
+          tabs={breakdowns.map(breakdown => ({
+            id: breakdown,
+            label: breakdown,
+          }))}
+          underlined
+        />
       </ScrollView>
       <Menu />
     </View>

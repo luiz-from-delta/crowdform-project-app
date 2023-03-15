@@ -31,4 +31,25 @@ export const styles = StyleSheet.create({
     paddingVertical: 10,
     width: '100%',
   },
+
+  underlinedActiveButton: {
+    backgroundColor: 'transparent',
+    borderBottomColor: '#770FDF',
+    borderBottomWidth: 2,
+  },
+
+  underlinedActiveButtonLabel: {
+    backgroundColor: 'rgba(0,0,0,0)',
+  },
+
+  underlinedButton: {
+    flex: 0,
+    height: 40,
+    width: 'auto',
+  },
+
+  underlinedContainer: {
+    width: 'auto',
+    columnGap: 20,
+  },
 });
