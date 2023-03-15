@@ -2,11 +2,20 @@ import React from 'react';
 import {LineChart as RNLineChart} from 'react-native-chart-kit';
 
 type Props = {
+  bezier?: boolean;
   data: number[];
+  height?: number;
   percentRange: 'negative' | 'positive';
+  width?: number;
 };
 
-const LineChart = ({data, percentRange}: Props) => {
+const LineChart = ({
+  bezier = true,
+  data,
+  height = 55,
+  percentRange,
+  width = 150,
+}: Props) => {
   return (
     <RNLineChart
       data={{
@@ -18,10 +27,10 @@ const LineChart = ({data, percentRange}: Props) => {
           },
         ],
       }}
-      bezier
+      bezier={bezier}
       transparent
-      width={150}
-      height={55}
+      width={width}
+      height={height}
       withDots={false}
       withHorizontalLabels={false}
       withHorizontalLines={false}

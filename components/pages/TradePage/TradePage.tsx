@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Dimensions,
   FlatList,
   ImageSourcePropType,
   ScrollView,
@@ -30,6 +31,7 @@ import InfoStatsList from '../../molecules/InfoStatsList';
 import BreakdownCard from '../../molecules/BreakdownCard';
 import Button from '../../atoms/Button';
 import Paragraph from '../../atoms/Paragraph';
+import LineChart from '../../atoms/LineChart';
 
 export type Fund = {
   data: number[];
@@ -179,18 +181,13 @@ const TradePage = () => {
 
         <ComponentHeader>Info & Stats</ComponentHeader>
 
-        {/* <FlatList
-          data={funds}
-          horizontal
-          keyExtractor={fund => fund.id}
-          renderItem={fund => <FundCard key={fund.item.id} {...fund.item} />}
-          style={styles.horizontalList}
-          contentContainerStyle={{
-            paddingHorizontal: 18,
-            columnGap: 18,
-          }}
-          showsHorizontalScrollIndicator={false}
-        /> */}
+        <LineChart
+          bezier={false}
+          data={fund.data}
+          height={90}
+          percentRange="positive"
+          width={Dimensions.get('window').width + 58}
+        />
 
         <InfoStatsList data={info} />
 
