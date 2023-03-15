@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
-import {FlatList, ScrollView, Text, View} from 'react-native';
+import {
+  FlatList,
+  ImageSourcePropType,
+  ScrollView,
+  Text,
+  View,
+} from 'react-native';
 
 import Menu from '../../molecules/Menu';
 import TopBar from '../../atoms/TopBar';
@@ -8,10 +14,18 @@ import {styles} from './styles';
 
 import WindIcon from '../../../assets/images/wind.svg';
 
+import cover1 from '../../../assets/images/cover-1.png';
+import cover2 from '../../../assets/images/cover-2.png';
+import cover3 from '../../../assets/images/cover-3.png';
+import logo1 from '../../../assets/images/logo-1.png';
+import logo2 from '../../../assets/images/logo-2.png';
+import logo3 from '../../../assets/images/logo-3.png';
+
 import ComponentHeader from '../../atoms/ComponentHeader';
 import FundInfo from '../../molecules/FundInfo';
 import TabSelector from '../../molecules/TabSelector';
 import InfoStatsList from '../../molecules/InfoStatsList';
+import BreakdownCard from '../../molecules/BreakdownCard';
 
 export type Fund = {
   data: number[];
@@ -91,6 +105,39 @@ const periods = ['1h', '1d', '1w', '1m', '1y', 'All'] as const;
 type Breakdown = (typeof breakdowns)[number];
 type Period = (typeof periods)[number];
 
+export type Card = {
+  content: string;
+  cover: ImageSourcePropType;
+  id: string;
+  logo: ImageSourcePropType;
+};
+
+type Cards = Card[];
+
+const cards: Cards = [
+  {
+    content:
+      'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+    cover: cover1,
+    id: '1',
+    logo: logo1,
+  },
+  {
+    content:
+      'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+    cover: cover2,
+    id: '2',
+    logo: logo2,
+  },
+  {
+    content:
+      'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+    cover: cover3,
+    id: '3',
+    logo: logo3,
+  },
+];
+
 const TradePage = () => {
   const [currentBreakdown, setCurrentBreakdown] =
     useState<Breakdown>('Highlighted');
@@ -152,6 +199,21 @@ const TradePage = () => {
             label: breakdown,
           }))}
           underlined
+        />
+
+        <FlatList
+          data={cards}
+          horizontal
+          keyExtractor={card => card.id}
+          renderItem={card => (
+            <BreakdownCard key={card.item.id} {...card.item} />
+          )}
+          style={styles.horizontalList}
+          contentContainerStyle={{
+            paddingHorizontal: 18,
+            columnGap: 18,
+          }}
+          showsHorizontalScrollIndicator={false}
         />
       </ScrollView>
       <Menu />
