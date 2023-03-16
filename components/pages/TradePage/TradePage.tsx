@@ -269,7 +269,7 @@ const TradePage = () => {
           <Button style={{width: '100%'}}>Buy</Button>
         </View>
       </ScrollView>
-      <Menu />
+      <Menu currentTab="trade" />
     </View>
   );
 };

@@ -1,8 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import useNavigation from '../../../hooks/useNavigation';
 
 import Button from '../../atoms/Button';
 import Checkbox from '../../atoms/Checkbox';
+import Link from '../../atoms/Link';
 import TextField from '../../atoms/TextField';
 import Title from '../../atoms/Title';
 import TopBar from '../../atoms/TopBar';
@@ -10,6 +12,12 @@ import TopBar from '../../atoms/TopBar';
 import {styles} from './styles';
 
 const SignUpPage = () => {
+  const navigation = useNavigation();
+
+  function handleNavigateToHome() {
+    navigation.navigate('Home');
+  }
+
   return (
     <>
       <TopBar />
@@ -34,9 +42,10 @@ const SignUpPage = () => {
         <Button
           extra={
             <Text style={styles.extra}>
-              Already have an account? Log in here.
+              Already have an account? <Link screen="Login">Log in here</Link>.
             </Text>
-          }>
+          }
+          onPress={handleNavigateToHome}>
           Create Account
         </Button>
       </View>

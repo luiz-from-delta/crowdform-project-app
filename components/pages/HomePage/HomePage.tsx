@@ -138,7 +138,7 @@ const HomePage = () => {
           showsHorizontalScrollIndicator={false}
         />
       </ScrollView>
-      <Menu />
+      <Menu currentTab="home" />
     </View>
   );
 };

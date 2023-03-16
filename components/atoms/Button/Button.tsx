@@ -1,5 +1,12 @@
 import React from 'react';
-import {StyleProp, Text, TouchableOpacity, View, ViewStyle} from 'react-native';
+import {
+  GestureResponderEvent,
+  StyleProp,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from 'react-native';
 import {styles} from './styles';
 
 type Props = {
@@ -8,6 +15,7 @@ type Props = {
   extra?: React.ReactNode;
   icon?: React.ReactNode;
   labelStyle?: StyleProp<ViewStyle>;
+  onPress?: (event: GestureResponderEvent) => void;
   style?: StyleProp<ViewStyle>;
 };
 
@@ -17,11 +25,12 @@ const Button = ({
   extra,
   icon,
   labelStyle,
+  onPress = () => {},
   style,
 }: Props) => {
   return (
     <View style={[styles.container, style]}>
-      <TouchableOpacity style={[styles.button, buttonStyle]}>
+      <TouchableOpacity onPress={onPress} style={[styles.button, buttonStyle]}>
         {icon}
         <Text style={[styles.label, labelStyle]}>{children}</Text>
       </TouchableOpacity>
